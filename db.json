@@ -13,6 +13,20 @@
       "telefono": "111111",
       "empresa": "Opia Creativos",
       "id": 27
+    },
+    {
+      "nombre": "frodo",
+      "email": "fro@correo.com",
+      "telefono": "123",
+      "empresa": "frodilandia",
+      "id": 28
+    },
+    {
+      "nombre": "add",
+      "email": "ad@correo.com",
+      "telefono": "333222",
+      "empresa": "1adasd",
+      "id": 29
     }
   ]
 }
