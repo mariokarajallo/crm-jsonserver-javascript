@@ -1,4 +1,5 @@
-import { obtenerCliente } from "./API.js";
+import { obtenerCliente, editarCliente } from "./API.js";
+import { mostrarAlerta, validar } from "./funciones.js";
 
 (function () {
   //datos del formulario
@@ -17,6 +18,10 @@ import { obtenerCliente } from "./API.js";
     const cliente = await obtenerCliente(idCliente);
 
     mostrarCliente(cliente);
+
+    //submit al formulario
+    const formulario = document.querySelector("#formulario");
+    formulario.addEventListener("submit", validarCliente);
   });
 
   function mostrarCliente(cliente) {
@@ -27,5 +32,25 @@ import { obtenerCliente } from "./API.js";
     inputTelefono.value = telefono;
     inputEmpresa.value = empresa;
     inputId.value = id;
+  }
+
+  function validarCliente(e) {
+    e.preventDefault();
+    // objeto que contiene los valores de cada input
+    const cliente = {
+      nombre: inputNombre.value,
+      email: inputEmail.value,
+      telefono: inputTelefono.value,
+      empresa: inputEmpresa.value,
+      id: parseInt(inputId.value),
+    };
+
+    if (validar(cliente)) {
+      mostrarAlerta("todos los campos son necesarios");
+      return;
+    }
+
+    // reescribe le objeto
+    editarCliente(cliente);
   }
 })();
