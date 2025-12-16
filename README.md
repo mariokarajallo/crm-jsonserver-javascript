@@ -3,6 +3,7 @@
 Este es un sistema de gestión de clientes (CRM) desarrollado en JavaScript que permite administrar una base de datos de clientes de manera sencilla. Utiliza `json-server` para simular una API REST, permitiendo realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) completas.
 
 ## Demo
+Puedes ver el proyecto en funcionamiento aquí: [CRM APP](https://crm-jsonserver-javascript.vercel.app/)
 
 ![Demo del proyecto](crm-jsonserver-javascript.gif)
 
