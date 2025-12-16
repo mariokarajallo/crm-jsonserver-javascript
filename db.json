@@ -3,16 +3,9 @@
     {
       "nombre": "Mario",
       "email": "mario@correo.com",
-      "telefono": "111111",
-      "empresa": "Opia Creativos",
-      "id": 27
-    },
-    {
-      "nombre": "frodo",
-      "email": "frodo@correo.com",
-      "telefono": "123",
-      "empresa": "frodilandia",
-      "id": 28
+      "telefono": "12345678",
+      "empresa": "Google Inc.",
+      "id": "27"
     }
   ]
 }

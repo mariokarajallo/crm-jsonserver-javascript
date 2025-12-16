@@ -13,7 +13,7 @@ import { mostrarAlerta, validar } from "./funciones.js";
     //consultar que registros estamos visitando para hacer la consulta a la api y traer los resultados
     const parametrosURL = new URLSearchParams(window.location.search);
 
-    const idCliente = parseInt(parametrosURL.get("id"));
+    const idCliente = parametrosURL.get("id");
 
     const cliente = await obtenerCliente(idCliente);
 
@@ -42,7 +42,7 @@ import { mostrarAlerta, validar } from "./funciones.js";
       email: inputEmail.value,
       telefono: inputTelefono.value,
       empresa: inputEmpresa.value,
-      id: parseInt(inputId.value),
+      id: inputId.value,
     };
 
     if (validar(cliente)) {

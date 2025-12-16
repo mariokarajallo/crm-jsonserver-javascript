@@ -6,11 +6,13 @@ export function mostrarAlerta(mensaje) {
 
     alerta.classList.add(
       "bg-red-100",
-      "border-red-400",
+      "border",
+      "border-red-200",
       "text-red-700",
       "px-4",
       "py-3",
-      "rounded",
+      "rounded-xl",
+      "shadow-md",
       "max-w-lg",
       "mx-auto",
       "mt-6",

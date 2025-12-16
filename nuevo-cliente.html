@@ -1,85 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRM - JSONServer</title>
-    <link rel="stylesheet" href="css/tailwind.min.css">
+    <title>CRM - Nuevo Cliente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="min-h-100 bg-gray-200">
-    <div class="md:flex min-h-screen md:align-top">
-        <aside class="md:w-2/5 lg:w-2/5 xl:w-1/5 bg-teal-600 px-5 py-10">
-            <h1 class="uppercase text-white tracking-wide text-2xl  font-bold mt-2">CRM - JSONServer</h1>
-            <p class="mt-10 text-white">Administra tus Clientes con el CRM - JSONServer</p>
-            <nav class="mt-8">
-                <a  
-                    href="index.html" 
-                    class="px-3 py-1 text-white block hover:bg-teal-700 hover:text-yellow-400 "
-                >Clientes</a>
-                <a 
-                    href="nuevo-cliente.html" 
-                    class="px-3 py-1 text-white block hover:bg-teal-900 mt-2 hover:text-yellow-400 bg-teal-700"
-                >Nuevo Cliente</a>
+<body class="bg-gray-50">
+    <div class="md:flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="md:w-2/5 lg:w-2/5 xl:w-1/6 bg-slate-900 px-5 py-10">
+            <h1 class="uppercase text-white tracking-wider text-xl font-bold text-center md:text-left">CRM Clientes</h1>
+            <p class="mt-4 text-slate-400 text-sm text-center md:text-left">Administra tus clientes y proyectos</p>
+            
+            <nav class="mt-10 flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg flex items-center transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Clientes
+                </a>
+                <a href="nuevo-cliente.html" class="px-4 py-3 text-white bg-indigo-600 rounded-lg flex items-center shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                    Nuevo Cliente
+                </a>
             </nav>
-        </aside> <!--sidebar-->
-        <main class="md:w-3/5  xl:w-4/5 px-5 py-10 bg-gray-200">
-            <h2 class="text-3xl font-light text-center">Nuevo Cliente</h2>
+        </aside>
 
-            <div class="flex flex-col mt-10 items-center">
-                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 w-10/12 md:w-8/12 lg:w-6/12">
-                    <div class=" shadow overflow-hidden sm:rounded-lg border-b border-gray-200 ">
-                        <form id="formulario" class="bg-white p-3" method="POST">
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre</label>
-                                <input 
-                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="nombre"
-                                    name="nombre"
-                                    type="text"
-                                    placeholder="Nombre Cliente"
-                                />
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Correo</label>
-                                <input 
-                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    placeholder="Email Cliente"
-                                />
-                            </div>
+        <!-- Main Content -->
+        <main class="md:w-3/5 xl:w-5/6 p-6 md:p-12 bg-gray-50 h-screen overflow-y-scroll">
+            <h2 class="text-3xl font-bold text-slate-800">Nuevo Cliente</h2>
+            <p class="mt-2 text-slate-500">Llena los siguientes campos para registrar un cliente</p>
 
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="telefono">Teléfono</label>
-                                <input 
-                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="telefono"
-                                    name="telefono"
-                                    type="tel"
-                                    placeholder="Teléfono Cliente"
-                                />
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="empresa">Empresa</label>
-                                <input 
-                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="empresa"
-                                    name="empresa"
-                                    type="text"
-                                    placeholder="Empresa Cliente"
-                                />
-                            </div>
-
-
-                            <input
-                                type="submit"
-                                class="bg-teal-600 hover:bg-teal-900 w-full mt-5 p-2 text-white uppercase font-bold"
-                                value="Agregar Cliente"
+            <div class="flex justify-center mt-10">
+                <div class="w-full max-w-lg">
+                    <form id="formulario" class="bg-white shadow-xl rounded-xl p-8 border border-gray-100 space-y-6" method="POST">
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2" for="nombre">Nombre</label>
+                            <input 
+                                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block p-2.5 transition-colors"
+                                id="nombre"
+                                name="nombre"
+                                type="text"
+                                placeholder="Nombre Cliente"
                             />
-                        </form>
-                    </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2" for="email">Email</label>
+                            <input 
+                                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block p-2.5 transition-colors"
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="Email Cliente"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2" for="telefono">Teléfono</label>
+                            <input 
+                                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block p-2.5 transition-colors"
+                                id="telefono"
+                                name="telefono"
+                                type="tel"
+                                placeholder="Teléfono Cliente"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2" for="empresa">Empresa</label>
+                            <input 
+                                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block p-2.5 transition-colors"
+                                id="empresa"
+                                name="empresa"
+                                type="text"
+                                placeholder="Empresa Cliente"
+                            />
+                        </div>
+
+                        <input
+                            type="submit"
+                            class="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 font-bold rounded-lg text-sm px-5 py-3 text-center uppercase cursor-pointer transition-all shadow-md hover:shadow-lg"
+                            value="Agregar Cliente"
+                        />
+                    </form>
                 </div>
             </div>
         </main>
